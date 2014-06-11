@@ -12,7 +12,7 @@ header("location:index.html");
 session_destroy();
 }
 
-echo "<p align='right'><a href=\"back.php\"> logout!</a></p>";
+echo "<p align='right'><a href=\"../back.php\"> logout!</a></p>";
 $con = mysql_connect("localhost","root","root");
 if (!$con)
   {

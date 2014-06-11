@@ -47,7 +47,7 @@ while($row = mysql_fetch_array($result))
 echo "</table>";
 echo "<br \><br \>";
 
-echo '<form action="back.php" method="post" >';
+echo '<form action="../back.php" method="post" >';
 echo "<p align='center' ><input type='submit' name='back' value='Back'></p>";
 echo '</form>';
 

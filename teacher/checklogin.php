@@ -46,7 +46,7 @@ if($count>=1)
 }
 else 
 {
-	echo '<form action="back.php" method="post" >';
+	echo '<form action="../back.php" method="post" >';
 	echo "<div align='center'><font size='5' color='white'> Wrong Username or Password</div>";
 	echo "<div align='center' ><input type='submit' name='back' value='Back'></div>";
 	echo '</form>';
