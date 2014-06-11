@@ -23,8 +23,8 @@
 <?php
 $host="localhost"; // Host name
 $username="root"; // Mysql username
-$password="a"; // Mysql password
-$db_name="students"; // Database name
+$password="root"; // Mysql password
+$db_name="at"; // Database name
 $tbl_name="members"; // Table name
 
 // Connect to server and select databse.
@@ -51,22 +51,20 @@ $result=mysql_query($sql);
 // Mysql_num_row is counting table row
 $count=mysql_num_rows($result);
 
-// If result matched $myusername and $mypassword, table row must be 1 row
-
-if($count>=1){
-
-// Register $myusername, $mypassword and redirect to file "login_success.php"
-session_register("myusername");
-session_register("mypassword");
-#session_register("mysubcode");
-#header("location:retrieve_teacher.php?subcode=$mysubcode");
-header("location:teacher.php?username=$myusername");
+if($count>=1)
+{
+	session_start();
+	$_SESSION["myusername"] = $myusername;
+	$_SESSION["mypassword"] = $mypassword;
+	#header("location:retrieve_teacher.php?subcode=$mysubcode");
+	header("location:teacher.php?username=$myusername");
 }
-else {
-echo '<form action="back.php" method="post" >';
-echo "<div align='center'><font size='5' color='white'> Wrong Username or Password</div>";
-echo "<div align='center' ><input type='submit' name='back' value='Back'></div>";
-echo '</form>';
+else 
+{
+	echo '<form action="back.php" method="post" >';
+	echo "<div align='center'><font size='5' color='white'> Wrong Username or Password</div>";
+	echo "<div align='center' ><input type='submit' name='back' value='Back'></div>";
+	echo '</form>';
 }
 
 ?>

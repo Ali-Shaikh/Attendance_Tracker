@@ -22,19 +22,19 @@
 <body>
 <?php
 session_start();
-if(!session_is_registered(myusername)){
+if(!isset($_SESSION["myusername"])){
 header("location:index.html");
 session_destroy();
 }
 
 echo "<p align='right'><a href=\"logout.php\"> logout!</a></p>";
-$con = mysql_connect("localhost","root","a");
+$con = mysql_connect("localhost","root","root");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
   }
 
-mysql_select_db("students", $con);
+mysql_select_db("at", $con);
 $myusername= $_GET['username'];
 $subcode= $_GET['subcode'];
 $result = mysql_query("SELECT * FROM sub1 where Subject_code=('$subcode')");

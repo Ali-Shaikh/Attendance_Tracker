@@ -23,8 +23,8 @@
 <?php
 $host="localhost"; // Host name
 $username="root"; // Mysql username
-$password="a"; // Mysql password
-$db_name="students"; // Database name
+$password="root"; // Mysql password
+$db_name="at"; // Database name
 $tbl_name="members"; // Table name
 
 // Connect to server and select databse.
