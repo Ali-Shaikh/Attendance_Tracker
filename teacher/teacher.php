@@ -1,22 +1,7 @@
 <html>
 
 <head>
-  <style type="text/css">
-      body{background:url(bb.jpg);
-	   background-size:200% 200%;
-	   -moz-background-size:100% 100%; /* Firefox 3.6 */
-	   background-repeat:no-repeat;
-	   word-wrap:break-word;}
-     
-      div{background:url(02.jpg);
-	  border:2px solid #a1a1a1;
-      	  padding:10px 40px; 
-          word-wrap:break-word;
-          width:1200px;
-          border-radius:25px;}
-
-     table.black{background:url(02.jpg);}
-  </style>
+<link rel="stylesheet" type="text/css" href="../css/retrieve.css">
 </head>    
 
 <body>
