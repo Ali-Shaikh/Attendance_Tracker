@@ -27,7 +27,7 @@ if (!$con)
   die('Could not connect: ' . mysql_error());
   }
 
-mysql_select_db("students", $con);
+mysql_select_db("at", $con);
 
 $result = mysql_query("SELECT * FROM sub1 where USN='$_POST[usn]' ");
 
@@ -70,4 +70,4 @@ mysql_close($con);
 ?>
 </center>
 </body>
-</html>
+</html>`
