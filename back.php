@@ -1,4 +1,4 @@
 <?php
 session_destroy();
-Header("Location: main_login.html");
+Header("Location: index.html");
 ?>
