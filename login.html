@@ -1,0 +1,66 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+<font color="black" />
+	<div class="ani">Track Attendance</div>
+<font size="6" color="white" />
+    <center>
+      <div><h1>
+	    Attendance Tracker
+      </h1></div>
+    <br /><br /><br />
+
+<!--teacher ------------------------------------------------------------------------------------->
+<form name="form1" method="post" action="teacher/checklogin.php">
+<table align='left' class="black" width="400" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+<tr>
+<td colspan="3"><strong><font  size=6 color="white">Teacher Login</font></strong></td>
+</tr>
+<tr>
+<td width="78"><font color="white" size=5 >Username</font></td>
+<td width="6"><font color="white">:</font></td>
+<td width="294"><input name="myusername" type="text" id="myusername"></td>
+</tr>
+<tr>
+<td><font size=5 color="white">Password</font></td>
+<td><font color="white">:</font></td>
+<td><input name="mypassword" type="password" id="mypassword"></td>
+</font>
+</tr>
+<!--<tr>
+<td><font size=5 color="white">Sub Code</font></td>
+<td><font color="white">:</font></td>
+<td><input name="mysubcode" type="text" id="sub"></td>
+</font>
+</tr>
+<tr>-->
+<td align='right'><input align='right' type="submit" name="Submit" value="Login"></td>
+</tr>
+</table>
+</form>
+<!#-----------------------------------------------------------------------------------------------
+
+#student --------------------------------------------------------------------------------------->
+<form name="form1" method="post" action="student/retrieve.php">
+<table align='right' class="black" width="400" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+<tr>
+<td colspan="3"><strong><font  size=6 color="white">Students</font></strong></td>
+</tr>
+<tr>
+<td width="78"><font color="white" size=5 >Username</font></td>
+<td width="6"><font color="white">:</font></td>
+<td width="294"><input name="usn" type="text" id="usn"></td>
+</tr>
+<tr>
+<td align='right'><input align='right' type="submit" name="Submit" value="Check"></td>
+</tr>
+</table>
+</form>
+<!#------------------------------------------------------------------------------------------------>
+
+</body>
+</html>
