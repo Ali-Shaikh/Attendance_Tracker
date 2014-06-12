@@ -1,66 +1,70 @@
-<html>
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://getbootstrap.com/examples/signin/ -->
+<html lang="en">
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    
+	    <title>Attendance Tracker : Welcome</title>
 
-<head>
-<link rel="stylesheet" type="text/css" href="css/index.css">
-</head>
+	    <!-- Bootstrap core CSS -->
+	    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-<body>
-<font color="black" />
-	<div class="ani">Track Attendance</div>
-<font size="6" color="white" />
-    <center>
-      <div><h1>
-	    Attendance Tracker
-      </h1></div>
-    <br /><br /><br />
+	    <!-- Custom styles for this template -->
+	    <link href="css/signin.css" rel="stylesheet">
+	    <link href="css/cover.css" rel="stylesheet">
+	</head>
 
-<!--teacher ------------------------------------------------------------------------------------->
-<form name="form1" method="post" action="teacher/checklogin.php">
-<table align='left' class="black" width="400" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
-<tr>
-<td colspan="3"><strong><font  size=6 color="white">Teacher Login</font></strong></td>
-</tr>
-<tr>
-<td width="78"><font color="white" size=5 >Username</font></td>
-<td width="6"><font color="white">:</font></td>
-<td width="294"><input name="myusername" type="text" id="myusername"></td>
-</tr>
-<tr>
-<td><font size=5 color="white">Password</font></td>
-<td><font color="white">:</font></td>
-<td><input name="mypassword" type="password" id="mypassword"></td>
-</font>
-</tr>
-<!--<tr>
-<td><font size=5 color="white">Sub Code</font></td>
-<td><font color="white">:</font></td>
-<td><input name="mysubcode" type="text" id="sub"></td>
-</font>
-</tr>
-<tr>-->
-<td align='right'><input align='right' type="submit" name="Submit" value="Login"></td>
-</tr>
-</table>
-</form>
-<!#-----------------------------------------------------------------------------------------------
+  <body>
+  	<div class="cover-container">
+	  	<div class="masthead clearfix">
+	        <div class="inner">
+	    	    <h3 class="masthead-brand">Attendance Tracker</h3>
+	            <ul class="nav masthead-nav">
+	        	    <li class="active"><a href="login.html">Login</a></li>
+	                <li><a href="#">New Feature 1</a></li>
+	                <li><a href="#">New Feature 2</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+    
+    <div class="container">
 
-#student --------------------------------------------------------------------------------------->
-<form name="form1" method="post" action="student/retrieve.php">
-<table align='right' class="black" width="400" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
-<tr>
-<td colspan="3"><strong><font  size=6 color="white">Students</font></strong></td>
-</tr>
-<tr>
-<td width="78"><font color="white" size=5 >Username</font></td>
-<td width="6"><font color="white">:</font></td>
-<td width="294"><input name="usn" type="text" id="usn"></td>
-</tr>
-<tr>
-<td align='right'><input align='right' type="submit" name="Submit" value="Check"></td>
-</tr>
-</table>
-</form>
-<!#------------------------------------------------------------------------------------------------>
+      <form class="form-signin" role="form" name="form1" method="post" action="teacher/checklogin.php">
+        <h2 class="form-signin-heading top">Teachers!</h2>
+        <input type="email" name="myusername" id="myusername" class="form-control" placeholder="Email address" required="" autofocus="">
+        <input type="password" name="mypassword" id="mypassword" class="form-control" placeholder="Password" required="">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="Submit">Sign in</button>
+      </form>
 
-</body>
-</html>
+      <form class="form-signin" role="form" name="form1" method="post" action="student/retrieve.php">
+        <h2 class="form-signin-heading">Students!</h2>
+        <input type="text" name="usn" id="usn" class="form-control" placeholder="USN" required="" autofocus="">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="Submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+
+    <div class="mastfoot">
+        <div class="inner">
+              <p>Powered By <a href="https://www.facebook.com/harekal.vikyath">Me</a>, by <a href="https://twitter.com/HAREKALVIKYATH">@me</a>.</p>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+
+</body></html>

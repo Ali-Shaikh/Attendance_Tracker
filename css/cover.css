@@ -139,6 +139,7 @@ body {
   .mastfoot {
     position: fixed;
     bottom: 0;
+    left: 25%;
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
@@ -158,4 +159,9 @@ body {
   .cover-container {
     width: 700px;
   }
+}
+
+
+div.student {
+  margin-top: 3%;
 }
