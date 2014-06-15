@@ -10,13 +10,13 @@ $host="localhost"; // Host name
 $username="root"; // Mysql username
 $password="root"; // Mysql password
 $db_name="at"; // Database name
-$tbl_name="members"; // Table name
+$tbl_name="sub1"; // Table name
 
 // Connect to server and select databse.
 mysql_connect("$host", "$username", "$password")or die("cannot connect");
 mysql_select_db("$db_name")or die("cannot select DB");
 $myusername = $_GET['username'];
-$sql="SELECT * FROM $tbl_name WHERE username=('$myusername')";
+$sql="SELECT * FROM $tbl_name WHERE teacher=('$myusername')";
 $result=mysql_query($sql);
 
 echo "<center>";
@@ -30,7 +30,7 @@ echo "</tr>";
 while($row = mysql_fetch_array($result))
   {
   echo "<tr>";
-  echo "<td><font size='4' color='white'><a href='retrieve_teacher.php?username=$myusername&subcode=".$row['sub']."'>" . $row['sub'] . "</a></font></td>";
+  echo "<td><font size='4' color='white'><a href='retrieve_teacher.php?username=$myusername&subcode=".$row['Subject_code']."'>" . $row['Subject_code'] . "</a></font></td>";
   echo "</tr>"; 
   }
 ?>

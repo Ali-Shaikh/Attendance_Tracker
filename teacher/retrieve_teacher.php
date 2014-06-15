@@ -22,7 +22,7 @@ if (!$con)
 mysql_select_db("at", $con);
 $myusername= $_GET['username'];
 $subcode= $_GET['subcode'];
-$result = mysql_query("SELECT * FROM sub1 where Subject_code=('$subcode')");
+$result = mysql_query("SELECT FROM sub1 where Subject_code=('$subcode')");
 
 
 echo "<center>";

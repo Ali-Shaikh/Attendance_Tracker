@@ -10,7 +10,7 @@ $host="localhost"; // Host name
 $username="root"; // Mysql username
 $password="root"; // Mysql password
 $db_name="at"; // Database name
-$tbl_name="members"; // Table name
+$tbl_name="teachers"; // Table name
 
 // Connect to server and select databse.
 mysql_connect("$host", "$username", "$password")or die("cannot connect");
