@@ -1,58 +1,73 @@
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="../css/retrieve.css">
-</head>
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://getbootstrap.com/examples/grid/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<body>
-<center>
-<?php
-$con = mysql_connect("localhost","root","root");
-if (!$con)
-  {
-  die('Could not connect: ' . mysql_error());
-  }
+    <title>Attendance Tracker : Attendance Status</title>
 
-mysql_select_db("at", $con);
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/grid.css" rel="stylesheet">
+  </head>
 
-$result = mysql_query("SELECT * FROM sub1 where USN='$_POST[usn]' ");
+  <body>
+    <div class="container">
+      <h2 id="tables-bordered">Attendance Status</h2>
+        <div class="bs-example">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Subject Code</th>
+                <th>Max Classes</th>
+                <th>Conducted</th>
+                <th>Attended</th>
+                <th>Percentage</th>
+                <th>Zone</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php
+              $con = mysql_connect("localhost","root","root");
+              if (!$con)
+                {
+                die('Could not connect: ' . mysql_error());
+                }
 
-echo "<table border='1'>
-<tr>
-<th><font size=\"5\" color=\"white\">SUB_CODE</font></th>
-<th><font size=\"5\" color=\"white\">MAX_CLASSES</font></th>
-<th><font size=\"5\" color=\"white\">CONDUCTED</font></th>
-<th><font size=\"5\" color=\"white\">ATTENDED</font></th>
-<th><font size=\"5\" color=\"white\">PERCENTAGE</font></th>
-<th><font size=\"5\" color=\"white\">ZONE</font></th>
-</tr>";
+              mysql_select_db("at", $con);
 
-while($row = mysql_fetch_array($result))
-  {
-  $a = $row['Class_conducted'];
-  $b = $row['Class_attended'];
-  $c = ($b/$a)*100;
-  $c = number_format ($c, 2);
-  $d = "";
-  echo "<tr>";
-  echo "<td><font size=\"4\" color=\"white\">" . $row['Subject_code'] . "</font></td>";
-  echo "<td><font size=\"4\" color=\"white\">" . $row['Max_no_of_class'] . "</font></td>";
-  echo "<td><font size=\"4\" color=\"white\">" . $row['Class_conducted'] . "</font></td>";
-  echo "<td><font size=\"4\" color=\"white\">" . $row['Class_attended'] . "</font></td>";
-  echo "<td><font size=\"4\" color=\"white\">" . $c . "</font></td>";
-  if ($c>=80) echo "<td bgcolor=\"green\"><font size=\"4\" color=\"white\">" . $d . "</font></td>";
-  elseif ($c>=75 ) echo "<td bgcolor=\"orange\"><font size=\"4\" color=\"white\">" . $d . "</font></td>";
-  else echo "<td bgcolor=\"red\"><font size=\"4\" color=\"white\">" . $d . "</font></td>";
-  echo "</tr>";
-  }
-echo "</table>";
-echo "<br \><br \>";
+              $result = mysql_query("SELECT * FROM sub1 where USN='$_POST[usn]' ");
 
-echo '<form action="../back.php" method="post" >';
-echo "<p align='center' ><input type='submit' name='back' value='Back'></p>";
-echo '</form>';
-
-mysql_close($con);
-?>
-</center>
-</body>
-</html>`
+              $num = 0;
+              while($row = mysql_fetch_array($result))
+              {
+                $num = $num + 1;
+                $a = $row['Class_conducted'];
+                $b = $row['Class_attended'];
+                $c = ($b/$a)*100;
+                $c = number_format ($c, 2);
+                $d = "";
+                echo "<tr>";
+                  echo "<td>$num</td>";
+                  echo "<td>" . $row['Subject_code'] . "</td>";
+                  echo "<td>" . $row['Max_no_of_class'] . "</td>";
+                  echo "<td>" . $row['Class_conducted'] . "</td>";
+                  echo "<td>" . $row['Class_attended'] . "</td>";
+                  echo "<td>" . $c . "</td>";
+                  if ($c>=80) echo "<td bgcolor=\"green\">" . $d . "</td>";
+                  elseif ($c>=75 ) echo "<td bgcolor=\"orange\">" . $d . "</td>";
+                  else echo "<td bgcolor=\"red\">" . $d . "</td>";
+                  echo "</tr>";
+                }
+            
+              mysql_close($con);
+            ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </body>
+  </html>
